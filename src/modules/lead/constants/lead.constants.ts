@@ -21,6 +21,7 @@ export const LEAD_SOURCE_LABELS: Record<LeadSource, string> = {
   phone: "Phone",
   exhibition: "Exhibition",
   social_media: "Social Media",
+  indiamart: "IndiaMART",
   other: "Other",
 };
 

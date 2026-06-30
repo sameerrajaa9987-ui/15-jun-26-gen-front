@@ -6,6 +6,7 @@ export type LeadSource =
   | "phone"
   | "exhibition"
   | "social_media"
+  | "indiamart"
   | "other";
 export type FuelType = "diesel" | "gas" | "petrol" | "any";
 

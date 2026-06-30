@@ -19,6 +19,7 @@ export const leadSchema = z.object({
     "phone",
     "exhibition",
     "social_media",
+    "indiamart",
     "other",
   ]),
   status: z.enum(["new", "in_progress", "converted", "not_interested"]),
