@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
-import { Pencil, PackagePlus, Download, Upload } from "lucide-react";
+import { Pencil, PackagePlus, Download, Upload, Trash2 } from "lucide-react";
 import { ResourceListPage } from "@/modules/common/ResourceListPage";
 import { InventoryDialog } from "../components/InventoryDialog";
 import { AddStockDialog } from "../components/AddStockDialog";
@@ -184,7 +184,7 @@ export function InventoryListPage() {
         )}
         renderActions={
           canManage
-            ? (item, onEdit) => (
+            ? (item, onEdit, onRequestDelete) => (
                 <div className="flex items-center gap-1.5">
                   <button
                     onClick={() => onEdit(item)}
@@ -201,6 +201,14 @@ export function InventoryListPage() {
                   >
                     <PackagePlus className="h-3 w-3" /> Stock
                   </button>
+                  {canDelete && (
+                    <button
+                      onClick={() => onRequestDelete(item.id)}
+                      className="flex items-center gap-1 rounded-md border border-destructive/30 bg-destructive/10 px-2.5 py-1.5 text-xs font-medium text-destructive hover:bg-destructive/20 transition-colors"
+                    >
+                      <Trash2 className="h-3 w-3" /> Delete
+                    </button>
+                  )}
                 </div>
               )
             : () => <span className="text-xs text-muted-foreground">View only</span>

@@ -50,7 +50,11 @@ interface ResourceListPageProps<TItem extends { id: string }, TQuery extends obj
     value: TItem | null;
     onSuccess: () => void;
   }) => React.ReactNode;
-  renderActions?: (item: TItem, onEdit: (item: TItem) => void) => React.ReactNode;
+  renderActions?: (
+    item: TItem,
+    onEdit: (item: TItem) => void,
+    onRequestDelete: (id: string) => void,
+  ) => React.ReactNode;
 }
 
 export function ResourceListPage<TItem extends { id: string }, TQuery extends object>({
@@ -236,7 +240,7 @@ export function ResourceListPage<TItem extends { id: string }, TQuery extends ob
                   {!hideActionsColumn && (
                     <td className="px-4 py-2.5">
                       {renderActions ? (
-                        renderActions(item, onEdit)
+                        renderActions(item, onEdit, setConfirmDelete)
                       ) : (
                         <div className="flex items-center gap-1.5">
                           <button
