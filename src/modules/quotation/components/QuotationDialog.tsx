@@ -247,6 +247,18 @@ export function QuotationDialog({
               <Plus className="h-3 w-3" /> Add item
             </button>
           </div>
+          {/* Column headers — placeholders vanish once a box has a value, so
+              these labels keep every column identifiable. */}
+          <div className="hidden sm:grid grid-cols-12 gap-2 px-2 mb-1 text-[11px] font-medium uppercase tracking-wide text-muted-foreground">
+            <div className="col-span-4">Description</div>
+            <div className="col-span-2">Model</div>
+            <div className="col-span-1">KVA</div>
+            <div className="col-span-1">HSN</div>
+            <div className="col-span-1">Qty</div>
+            <div className="col-span-1">Rate (₹)</div>
+            <div className="col-span-1">Disc %</div>
+            <div className="col-span-1">GST %</div>
+          </div>
           <div className="space-y-2">
             {fields.map((field, i) => (
               <div key={field.id} className="rounded-lg border border-border p-2">
