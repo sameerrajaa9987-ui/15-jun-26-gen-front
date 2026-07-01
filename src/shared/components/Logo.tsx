@@ -1,7 +1,9 @@
 /**
  * Sawafuji brandmarks.
- * - <LogoFull> renders the full SAWAFUJI wordmark image (has the name in it),
- *   for the login panel and the expanded sidebar header.
+ * - <LogoFull> renders the transparent SAWAFUJI wordmark (has the name in it).
+ *   variant="light" (default) = white text, for dark surfaces (sidebar, login).
+ *   variant="dark" = black text, for light surfaces.
+ *   variant="auto" = switches with the theme (for surfaces that follow it).
  * - <LogoMark> is a compact "S" monogram badge in the brand blue, for tight
  *   icon-only spots such as the collapsed sidebar rail.
  */
@@ -25,19 +27,41 @@ export function LogoMark({ size = 32 }: { size?: number }) {
   );
 }
 
-export function LogoFull({ height = 30, className = "" }: { height?: number; className?: string }) {
-  // The wordmark art has a white background, so it sits in a white rounded chip
-  // to read cleanly on both the dark sidebar and light surfaces.
+export function LogoFull({
+  height = 30,
+  className = "",
+  variant = "light",
+}: {
+  height?: number;
+  className?: string;
+  variant?: "light" | "dark" | "auto";
+}) {
+  const imgCls = "w-auto object-contain";
+  if (variant === "auto") {
+    return (
+      <span className={`inline-flex ${className}`} style={{ lineHeight: 0 }}>
+        <img
+          src="/logo-dark.png"
+          alt="Sawafuji"
+          style={{ height }}
+          className={`${imgCls} dark:hidden`}
+        />
+        <img
+          src="/logo-light.png"
+          alt="Sawafuji"
+          style={{ height }}
+          className={`${imgCls} hidden dark:block`}
+        />
+      </span>
+    );
+  }
   return (
-    <span
-      className={`inline-flex items-center rounded-md bg-white px-2 py-1 ${className}`}
-      style={{ lineHeight: 0 }}
-    >
+    <span className={`inline-flex ${className}`} style={{ lineHeight: 0 }}>
       <img
-        src="/full-logo.jpeg"
+        src={variant === "dark" ? "/logo-dark.png" : "/logo-light.png"}
         alt="Sawafuji"
         style={{ height }}
-        className="w-auto object-contain"
+        className={imgCls}
       />
     </span>
   );

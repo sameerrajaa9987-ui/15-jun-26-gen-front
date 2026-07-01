@@ -59,7 +59,7 @@ export function LoginPage() {
         <div className="absolute inset-0 bg-gradient-to-br from-sidebar/95 via-sidebar/80 to-primary/55" />
         <div className="absolute inset-0 bg-sidebar/25" />
         <div className="relative flex items-center gap-3">
-          <LogoFull height={40} />
+          <LogoFull height={52} />
         </div>
         <div className="relative space-y-8">
           <h2 className="max-w-md text-3xl font-bold leading-tight">
@@ -86,7 +86,7 @@ export function LoginPage() {
         <div className="w-full max-w-md">
           <div className="mb-8 text-center lg:hidden">
             <div className="mb-3 inline-flex justify-center">
-              <LogoFull height={40} />
+              <LogoFull height={44} variant="auto" />
             </div>
           </div>
 
