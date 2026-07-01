@@ -2,7 +2,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import { useEffect, useMemo, useState } from "react";
 import { ChevronRight, X } from "lucide-react";
 import { filterSections, type MenuItem } from "./menu";
-import { LogoMark } from "@/shared/components/Logo";
+import { LogoMark, LogoFull } from "@/shared/components/Logo";
 import { useSidebar } from "./sidebarContext";
 import { useAppSelector } from "@/app/hooks";
 import { cn } from "@/lib/utils";
@@ -173,13 +173,11 @@ export function Sidebar() {
             collapsed ? "justify-center px-2" : "gap-2.5 px-4",
           )}
         >
-          <LogoMark size={collapsed ? 34 : 30} />
-          {!collapsed && (
+          {collapsed ? (
+            <LogoMark size={34} />
+          ) : (
             <div className="flex-1 min-w-0">
-              <div className="text-sm font-bold text-sidebar-foreground truncate">
-                Power<span className="text-primary">Gen</span>
-              </div>
-              <div className="text-xs text-sidebar-foreground/50 truncate">Sales &amp; Service</div>
+              <LogoFull height={24} />
             </div>
           )}
           {showOverlay && (

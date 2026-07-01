@@ -2,101 +2,101 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ─── PowerGen CRM — "Voltage" palette (2026) ───────────────────────────────
-   Researched 2026 direction: cool graphite/slate neutrals for a precise modern
-   dashboard, a vibrant high-contrast accent, and dark-mode-first. For a
-   generator / power-equipment business the industry-iconic accent is machinery
-   amber (electric yellow). Status colours are conventional. Tokens stay in HSL.
+/* ─── Sawafuji CRM — "Cobalt / Slate" palette (2026) ────────────────────────
+   2026 premium direction: elevated cool-slate neutrals (no flat white/black),
+   one confident brand accent used with high contrast, dark-mode-first, and
+   functional status colours. Brand accent is Sawafuji cobalt blue; headers use
+   a cobalt→sky gradient. Tokens stay in HSL (shadcn-style).
 ─────────────────────────────────────────────────────────────────────────── */
 
 @layer base {
   :root,
   .light {
-    --background: 40 25% 95%; /* warm stone — elevated neutral */
-    --foreground: 220 26% 14%;
-    --card: 40 30% 99%;
-    --card-foreground: 220 26% 14%;
-    --popover: 40 30% 99%;
-    --popover-foreground: 220 26% 14%;
+    --background: 213 30% 98%; /* cool elevated near-white */
+    --foreground: 222 47% 11%; /* slate-900 */
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 33 92% 45%; /* electric amber, deepened for cream contrast */
-    --primary-foreground: 40 30% 98%;
+    --primary: 224 76% 48%; /* Sawafuji cobalt */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 40 24% 88%;
-    --secondary-foreground: 220 26% 14%;
+    --secondary: 214 24% 94%;
+    --secondary-foreground: 222 47% 15%;
 
-    --muted: 40 24% 88%;
-    --muted-foreground: 220 12% 42%;
+    --muted: 214 24% 94%;
+    --muted-foreground: 215 16% 42%; /* slate-500 */
 
-    --accent: 38 95% 50%;
-    --accent-foreground: 220 40% 10%;
+    --accent: 214 30% 92%; /* subtle slate hover surface */
+    --accent-foreground: 224 76% 42%;
 
     --destructive: 0 72% 51%;
-    --destructive-foreground: 40 30% 98%;
+    --destructive-foreground: 0 0% 100%;
 
     --success: 160 84% 33%; /* emerald — converted / paid */
     --success-foreground: 0 0% 100%;
 
-    --warning: 38 92% 48%; /* amber — pending / low stock */
-    --warning-foreground: 220 26% 14%;
+    --warning: 32 95% 44%; /* amber — pending / low stock */
+    --warning-foreground: 0 0% 100%;
 
-    --border: 40 16% 80%;
-    --input: 40 16% 80%;
-    --ring: 38 95% 50%;
-    --radius: 0.65rem;
+    --border: 214 22% 88%;
+    --input: 214 22% 88%;
+    --ring: 224 76% 48%;
+    --radius: 0.7rem;
 
-    /* Sidebar — always graphite regardless of theme for brand continuity */
-    --sidebar: 220 33% 9%;
-    --sidebar-foreground: 215 28% 85%;
-    --sidebar-primary: 38 95% 55%;
-    --sidebar-primary-foreground: 220 40% 10%;
-    --sidebar-accent: 220 28% 16%;
-    --sidebar-accent-foreground: 215 28% 92%;
-    --sidebar-border: 220 24% 22%;
-    --sidebar-ring: 38 95% 55%;
+    /* Sidebar — deep cobalt-graphite in both themes for brand continuity */
+    --sidebar: 224 44% 9%;
+    --sidebar-foreground: 214 22% 84%;
+    --sidebar-primary: 222 89% 62%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 224 34% 16%;
+    --sidebar-accent-foreground: 214 22% 93%;
+    --sidebar-border: 224 28% 20%;
+    --sidebar-ring: 222 89% 62%;
   }
 
   .dark {
-    --background: 220 32% 8%; /* graphite page */
-    --foreground: 215 28% 91%;
-    --card: 220 26% 12%;
-    --card-foreground: 215 28% 91%;
-    --popover: 220 26% 12%;
-    --popover-foreground: 215 28% 91%;
+    --background: 222 42% 7%; /* deep slate near-black */
+    --foreground: 210 22% 92%;
+    --card: 222 32% 11%;
+    --card-foreground: 210 22% 92%;
+    --popover: 222 32% 11%;
+    --popover-foreground: 210 22% 92%;
 
-    --primary: 38 95% 55%; /* electric amber — pops on graphite */
-    --primary-foreground: 220 40% 9%;
+    --primary: 222 89% 62%; /* bright cobalt — pops on slate */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 22% 20%;
-    --secondary-foreground: 215 28% 91%;
+    --secondary: 222 24% 18%;
+    --secondary-foreground: 210 22% 92%;
 
-    --muted: 220 22% 20%;
-    --muted-foreground: 215 16% 62%;
+    --muted: 222 24% 18%;
+    --muted-foreground: 215 18% 62%;
 
-    --accent: 38 95% 55%;
-    --accent-foreground: 220 40% 9%;
+    --accent: 222 26% 18%; /* subtle hover surface */
+    --accent-foreground: 210 22% 95%;
 
-    --destructive: 0 70% 55%;
-    --destructive-foreground: 215 28% 91%;
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 210 22% 96%;
 
     --success: 158 64% 45%;
-    --success-foreground: 220 40% 9%;
+    --success-foreground: 222 47% 9%;
 
-    --warning: 38 92% 55%;
-    --warning-foreground: 220 40% 9%;
+    --warning: 35 92% 55%;
+    --warning-foreground: 222 47% 9%;
 
-    --border: 220 20% 24%;
-    --input: 220 20% 24%;
-    --ring: 38 95% 55%;
+    --border: 222 24% 20%;
+    --input: 222 24% 20%;
+    --ring: 222 89% 62%;
 
-    --sidebar: 220 38% 6%;
-    --sidebar-foreground: 215 28% 85%;
-    --sidebar-primary: 38 95% 55%;
-    --sidebar-primary-foreground: 220 40% 9%;
-    --sidebar-accent: 220 26% 13%;
-    --sidebar-accent-foreground: 215 28% 92%;
-    --sidebar-border: 220 22% 16%;
-    --sidebar-ring: 38 95% 55%;
+    --sidebar: 224 46% 7%;
+    --sidebar-foreground: 214 22% 84%;
+    --sidebar-primary: 222 89% 62%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 224 30% 14%;
+    --sidebar-accent-foreground: 214 22% 93%;
+    --sidebar-border: 224 24% 16%;
+    --sidebar-ring: 222 89% 62%;
   }
 
   * {
@@ -122,9 +122,10 @@ body,
 
 /* ── 2026 polish ──────────────────────────────────────────────────────────── */
 
-/* Brand gradient text helper for headers. */
+/* Brand gradient text helper for headers — cobalt → sky. */
 .pg-gradient-text {
-  @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  @apply bg-clip-text text-transparent;
+  background-image: linear-gradient(to right, hsl(224 76% 52%), hsl(199 89% 52%));
 }
 
 /* Ledger-style numerals so figures align in columns. */

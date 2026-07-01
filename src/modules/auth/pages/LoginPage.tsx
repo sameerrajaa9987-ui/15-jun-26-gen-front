@@ -7,7 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useLogin } from "@/modules/auth/hooks/useAuth";
 import { useAppDispatch } from "@/app/hooks";
 import { setAuth } from "@/modules/auth/authSlice";
-import { LogoMark } from "@/shared/components/Logo";
+import { LogoFull } from "@/shared/components/Logo";
 import { getApiErrorMessage } from "@/shared/api/http";
 
 const schema = z.object({
@@ -50,22 +50,16 @@ export function LoginPage() {
     <div className="min-h-screen grid lg:grid-cols-2 bg-background">
       {/* Brand panel */}
       <div className="relative hidden lg:flex flex-col justify-between overflow-hidden bg-sidebar p-12 text-sidebar-foreground">
-        <div className="pg-aurora-a absolute -top-24 -right-24 h-96 w-96 rounded-full bg-primary/25 blur-3xl" />
-        <div className="pg-aurora-b absolute -bottom-24 -left-16 h-80 w-80 rounded-full bg-accent/25 blur-3xl" />
-        <div className="pg-aurora-a absolute top-1/3 left-1/4 h-72 w-72 rounded-full bg-amber-400/15 blur-3xl" />
+        {/* Premium industrial backdrop (self-hosted Unsplash photo) */}
         <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "linear-gradient(hsl(var(--sidebar-foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--sidebar-foreground)) 1px, transparent 1px)",
-            backgroundSize: "44px 44px",
-          }}
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/login-bg.jpg')" }}
         />
+        {/* Cobalt-tinted gradient for brand cohesion + text legibility */}
+        <div className="absolute inset-0 bg-gradient-to-br from-sidebar/95 via-sidebar/80 to-primary/55" />
+        <div className="absolute inset-0 bg-sidebar/25" />
         <div className="relative flex items-center gap-3">
-          <LogoMark size={44} />
-          <span className="text-xl font-extrabold tracking-tight">
-            Power<span className="text-primary">Gen</span>
-          </span>
+          <LogoFull height={40} />
         </div>
         <div className="relative space-y-8">
           <h2 className="max-w-md text-3xl font-bold leading-tight">
@@ -83,7 +77,7 @@ export function LoginPage() {
           </ul>
         </div>
         <p className="relative text-xs text-sidebar-foreground/50">
-          © {new Date().getFullYear()} PowerGen · Generator Sales &amp; Service CRM
+          © {new Date().getFullYear()} Sawafuji · Generator Sales &amp; Service CRM
         </p>
       </div>
 
@@ -91,12 +85,9 @@ export function LoginPage() {
       <div className="flex items-center justify-center p-6">
         <div className="w-full max-w-md">
           <div className="mb-8 text-center lg:hidden">
-            <div className="mb-3 inline-flex">
-              <LogoMark size={56} />
+            <div className="mb-3 inline-flex justify-center">
+              <LogoFull height={40} />
             </div>
-            <h1 className="text-2xl font-bold">
-              Power<span className="text-primary">Gen</span> CRM
-            </h1>
           </div>
 
           <div className="rounded-2xl border border-border bg-card p-8 shadow-xl">
