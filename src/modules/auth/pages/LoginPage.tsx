@@ -59,7 +59,7 @@ export function LoginPage() {
         <div className="absolute inset-0 bg-gradient-to-br from-sidebar/95 via-sidebar/80 to-primary/55" />
         <div className="absolute inset-0 bg-sidebar/25" />
         <div className="relative flex items-center gap-3">
-          <LogoFull height={52} />
+          <LogoFull height={104} />
         </div>
         <div className="relative space-y-8">
           <h2 className="max-w-md text-3xl font-bold leading-tight">
@@ -77,7 +77,7 @@ export function LoginPage() {
           </ul>
         </div>
         <p className="relative text-xs text-sidebar-foreground/50">
-          © {new Date().getFullYear()} Sawafuji · Generator Sales &amp; Service CRM
+          © {new Date().getFullYear()} SRF Power Machine · Generator Sales &amp; Service CRM
         </p>
       </div>
 
@@ -86,7 +86,7 @@ export function LoginPage() {
         <div className="w-full max-w-md">
           <div className="mb-8 text-center lg:hidden">
             <div className="mb-3 inline-flex justify-center">
-              <LogoFull height={44} variant="auto" />
+              <LogoFull height={72} variant="auto" />
             </div>
           </div>
 

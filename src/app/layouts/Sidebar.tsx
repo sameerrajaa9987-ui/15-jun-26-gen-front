@@ -177,7 +177,7 @@ export function Sidebar() {
             <LogoMark size={34} />
           ) : (
             <div className="flex-1 min-w-0">
-              <LogoFull height={34} />
+              <LogoFull height={42} />
             </div>
           )}
           {showOverlay && (

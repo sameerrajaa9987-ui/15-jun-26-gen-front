@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ─── Sawafuji CRM — "Cobalt / Slate" palette (2026) ────────────────────────
+/* ─── SRF Power Machine CRM — "Cobalt / Slate" palette (2026) ────────────────────────
    2026 premium direction: elevated cool-slate neutrals (no flat white/black),
    one confident brand accent used with high contrast, dark-mode-first, and
-   functional status colours. Brand accent is Sawafuji cobalt blue; headers use
+   functional status colours. Brand accent is SRF Power Machine cobalt blue; headers use
    a cobalt→sky gradient. Tokens stay in HSL (shadcn-style).
 ─────────────────────────────────────────────────────────────────────────── */
 
@@ -19,7 +19,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
 
-    --primary: 224 76% 48%; /* Sawafuji cobalt */
+    --primary: 224 76% 48%; /* SRF Power Machine cobalt */
     --primary-foreground: 0 0% 100%;
 
     --secondary: 214 24% 94%;
